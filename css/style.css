@@ -7,7 +7,7 @@
 }
 
 :checked+.tabbar__button {
-    color: #B22222	;
+    color: #33CCFF	;
 }
 
 .tabbar__icon {
@@ -25,7 +25,7 @@
 .title{
 font-weight: bold;
 font-size: 36px;
-color: #B22222	;
+color: #33CCFF	;
 }
 
 .poster{ text-align: center;   height: 540px;width: auto;

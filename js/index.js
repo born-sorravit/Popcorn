@@ -40,16 +40,16 @@ $(function() {
             <ons-carousel swipeable auto-scroll overscrollable id="carousel"
             style="text-align: center; background-color: black;" item-width="150px">
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster2}" alt="" style="width: 130px; margin-left: 10px;margin-right: 10px;" >
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster4}" alt="" style="width: 130px;margin-left: 10px;margin-right: 10px;">
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="" >
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster1}" alt="" style="width: 130px; margin-left: 10px;margin-right: 10px;">                
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >                
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster3}" alt="" style="width: 130px;margin-left: 10px;margin-right: 10px;">
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="" >
             </ons-carousel-item>
         </ons-carousel>
             </div>`;
@@ -63,20 +63,46 @@ $(function() {
             <ons-carousel swipeable auto-scroll overscrollable id="carousel"
             style="text-align: center; background-color: black;" item-width="150px">
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster2}" alt="" style="width: 130px; margin-left: 10px;margin-right: 10px;" >
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="">
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster4}" alt="" style="width: 130px;margin-left: 10px;margin-right: 10px;">
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster1}" alt="" style="width: 130px; margin-left: 10px;margin-right: 10px;">                
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="">                
             </ons-carousel-item>
             <ons-carousel-item>
-            <img class="card-img-top logo" src="${doc.data().poster3}" alt="" style="width: 130px;margin-left: 10px;margin-right: 10px;">
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">
             </ons-carousel-item>
         </ons-carousel>
             </div>`;
             $('#trends').append(row);
+        });
+    });
+
+    db.collection("poc").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = `<div class="text-center">
+            <ons-carousel swipeable auto-scroll overscrollable id="carousel"
+            style="text-align: center; background-color: black;" item-width="150px">
+            <ons-carousel-item>
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
+            </ons-carousel-item>
+            <ons-carousel-item>
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
+            </ons-carousel-item>
+            <ons-carousel-item>
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
+            </ons-carousel-item>
+            <ons-carousel-item>
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
+            </ons-carousel-item>
+            <ons-carousel-item>
+            <img class="card-img-top logo sizeposter" src="${doc.data().poster5}" alt="">
+            </ons-carousel-item>
+        </ons-carousel>
+            </div>`;
+            $('#poc').append(row);
         });
     });
 

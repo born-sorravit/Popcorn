@@ -129,3 +129,16 @@
     width: 100%;
     height: auto;
 }
+
+.poc {
+    color: #33CCFF;
+    font-size: 22px;
+    padding: 10px 0 10px 20px;
+}
+
+.sizeposter {
+    width: 130px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,32 @@
+.headderf{
+    font-weight: bold;
+    font-size: 36px;
+    color: #33CCFF	;
+    }
+.headderp{
+    padding-top: 30px; 
+    padding-left: 30px;
+}
+.headderpt{
+    padding-left: 30px;
+}
+.topixf{
+
+        font-weight: bold;
+        font-size: 24px;
+        color: #dbdedf	;
+        
+}
+.page__background{
+    background-color: black;
+}
+.list-title{
+    font-weight: bold;
+    font-size: 16px;
+    color: #dbdedf	;
+}
+.subtitle{
+    font-weight: bold;
+    font-size: 16px;
+    color: #dbdedf	;
+}

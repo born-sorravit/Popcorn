@@ -1,0 +1,50 @@
+.page__background {
+    background-color: black;
+}
+
+.title {
+    font-size: 36px;
+    color: #33CCFF;
+    font-weight: bold;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.form-control {
+    display: block;
+    width: 80%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #33ccff;
+    box-shadow: 0 0 0 0.2rem rgb(51 204 255);
+}
+
+.ml-mr-auto {
+    margin-left: auto;
+    margin-right: auto;
+}

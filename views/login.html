@@ -11,11 +11,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="../css/login.css">
 
 </head>
 
 <body>
+    <ons-page>
 
+        <div class="text-center mt-30">
+            <div class="title">POPCORN</div>
+        </div>
+        <div id="list">
+        </div>
+        <div class="container">
+            <p class="text-center"></p>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-sm ml-mr-auto" id="email" aria-describedby="helpId" placeholder="E-MAIL">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control form-control-sm ml-mr-auto" id="password" aria-describedby="helpId" placeholder="PASSWORD">
+            </div>
+            <p class="text-center">
+                <button type="submit" class="btn btn-primary" id="signinemail">Sign In</button>
+            </p>
+            <div class="text-center">
+                <h3 id="errormessage"></h3>
+            </div>
+        </div>
+
+
+
+
+    </ons-page>
 
 
     <!-- Optional JavaScript -->
@@ -27,8 +54,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
-    <script src="index.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

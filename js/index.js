@@ -12,6 +12,13 @@ $(function() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    var db = firebase.firestore();
 
+    db.collection("logo").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = ``;
+            $('#list').append(row);
+        });
+    });
 
 })

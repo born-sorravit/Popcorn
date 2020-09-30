@@ -1,3 +1,11 @@
+hr {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid #dbdedf;
+    width: 300px;
+}
+
 .page__background {
     background-color: black;
 }
@@ -6,6 +14,16 @@
     font-size: 36px;
     color: #33CCFF;
     font-weight: bold;
+}
+
+.font-regist {
+    font-size: 18px;
+    color: #dbdedf;
+}
+
+.checkbox {
+    font-size: 18px;
+    color: #33CCFF;
 }
 
 .pd-15 {
@@ -19,6 +37,28 @@
 .logo {
     width: 200px;
     height: auto;
+}
+
+.btn-primary {
+    background-color: #33ccff;
+    border-color: #33ccff;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #33ccff;
+    border-color: #33ccff;
+}
+
+.btn-primary:hover {
+    background-color: #33ccff;
+    border-color: #33ccff;
+}
+
+.btn-primary:focus {
+    border-color: #33ccff;
 }
 
 .form-control {
@@ -35,6 +75,13 @@
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn {
+    padding: 0.375rem 2.75rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: 2.25rem;
 }
 
 .form-control:focus {

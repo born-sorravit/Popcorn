@@ -1,5 +1,5 @@
 .toolbar {
-    background-color: black    ;
+    background-color: black;
 }
 
 .tabbar {
@@ -7,69 +7,68 @@
 }
 
 :checked+.tabbar__button {
-    color: #33CCFF	;
+    color: #33CCFF;
 }
 
-.page__background{
+.page__background {
     background-color: black;
 }
 
 .active {
-    background-color:black;
+    background-color: black;
 }
 
-.title{
-font-weight: bold;
-font-size: 36px;
-color: #33CCFF	;
+.title {
+    font-weight: bold;
+    font-size: 36px;
+    color: #33CCFF;
 }
 
-.poster{ text-align: center;   height: 540px;width: auto;
-}
-
-.top10{
+.top10 {
     text-align: center;
     padding-top: 28px;
     font-size: larger;
     font-weight: bold;
 }
 
-.searchPoster{
-    height: 150px;width: 100px;
+.searchPoster {
+    height: 150px;
+    width: 100px;
 }
 
-.movieTitle{
+.movieTitle {
     font-size: 16px;
     font-weight: bold;
 }
 
-.movieDetail{
+.movieDetail {
     font-size: 12px;
 }
-.rating{ padding: 0 0 0 0;
+
+.rating {
+    padding: 0 0 0 0;
     font-size: 14px;
     font-weight: bold;
 }
 
-.star{
-    text-align:center;
-    padding: 0 0 0 0;    
+.star {
+    text-align: center;
+    padding: 0 0 0 0;
     color: goldenrod;
     font-size: 28px;
 }
-.searchSize{
+
+.searchSize {
     width: 300px;
 }
 
-
-
-.detailPoster{
+.detailPoster {
     width: 300px;
     height: 420px;
     text-align: center;
-
 }
-.posterCenter{
+
+.posterCenter {
     text-align: center;
     padding: 20px 0 0 0;
     margin-left: auto;
@@ -77,52 +76,56 @@ color: #33CCFF	;
     margin-top: 10px;
 }
 
-.titleDetail{
+.titleDetail {
     font-size: 22px;
     font-weight: bold;
-    
 }
 
-.detail{
+.detail {
     padding-top: 8px;
     font-size: 14px;
     line-height: 18px;
 }
 
-.search-input{
+.search-input {
     background-color: white;
 }
-.titleDetail{
+
+.titleDetail {
     color: white;
 }
 
-.white{
-    color: white;}
-
-.left{
-    background-repeat:inherit;
+.white {
+    color: white;
 }
 
-.bwPoster{
-    background-image: url("/image/bw.jpg");
-    height: 420px;width: 300px;
-    background-repeat: no-repeat;
+.left {
+    background-repeat: inherit;
+}
+
+.poster {
+    text-align: center;
+    width: auto;
+    height: 500px;
+    width: 800px;
     background-size: cover;
 }
 
-.back-button{
-    color:white ;
+.back-button {
+    color: white;
 }
-.back-button__icon{
+
+.back-button__icon {
     fill: white;
 }
 
-#carousel{
-    height: 300px;
+.whatNew {
+    color: #33CCFF;
+    font-size: 28px;
+    padding: 10px 0 10px 20px;
 }
 
-.whatNew{
-color: #33CCFF;
-font-size: 28px;
-padding: 10px 0 10px 20px;
+.carouselPoster {
+    width: 100%;
+    height: auto;
 }

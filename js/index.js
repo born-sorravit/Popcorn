@@ -15,20 +15,16 @@ $(function() {
     firebase.analytics();
     var db = firebase.firestore();
 
-    db.collection("moviePoster").get().then((querySnapshot) => {
+    db.collection("carousel").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center">
             <ons-carousel swipeable auto-scroll overscrollable id="carousel"
                 style="text-align: center; background-color: black;">
                 <ons-carousel-item>
-                <img class="card-img-top logo carouselPoster"  src="${doc.data().poster1}" alt="" id="tennet">
+                <img class="card-img-top logo carouselPoster"  src="${doc.data().img}" alt="" >
                 </ons-carousel-item>
-                <ons-carousel-item>
-                <img class="card-img-top logo carouselPoster" src="${doc.data().poster2}" alt="">                
-                </ons-carousel-item>
-                <ons-carousel-item>
-                <img class="card-img-top logo carouselPoster" src="${doc.data().poster3}" alt="">
-                </ons-carousel-item>
+      
+              
             </ons-carousel>
             </div>`;
             $('#list').append(row);

@@ -1,3 +1,4 @@
+$(function() {
 document.addEventListener('init', function (event) {
     var page = event.target;
     console.log(page.id);
@@ -9,6 +10,7 @@ document.addEventListener('init', function (event) {
                 document.querySelector('#myNavigator').pushPage('views/bw.html');
             };
         };
+        
     } else if (page.id === 'bw' || page.id === 'bb') {        
         $('#back').show();      
         document.querySelector('ons-back-button').onclick = function(event) {
@@ -16,5 +18,5 @@ document.addEventListener('init', function (event) {
         };
 
     }
-
 });
+})

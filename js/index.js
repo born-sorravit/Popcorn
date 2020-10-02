@@ -1,5 +1,4 @@
 $(function() {
-
     var firebaseConfig = {
         apiKey: "AIzaSyDyXjr-BUDZTM5MVKdQvDVMlINCofdTFlo",
         authDomain: "popcorn-9afb7.firebaseapp.com",
@@ -15,44 +14,81 @@ $(function() {
     firebase.analytics();
     var db = firebase.firestore();
 
-    db.collection("carousel").get().then((querySnapshot) => {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var email = user.email;
+            console.log(`User with email ${email} signed in`);
+
+        } else {
+            window.location.href = "/views/login.html";
+        }
+    });
+
+    $('#signout').click(function() {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+        });
+    })
+
+    db.collection("logo").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<div class="text-center">
-            <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-                style="text-align: center; background-color: black;">
-                <ons-carousel-item>
-                <img class="card-img-top logo carouselPoster"  src="${doc.data().img}" alt="" >
-                </ons-carousel-item>
-      
-              
-            </ons-carousel>
-            </div>`;
+            var row = ``;
             $('#list').append(row);
         });
     });
 
-    db.collection("continue").get().then((querySnapshot) => {
+
+
+    db.collection("carousel").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center">
-            <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-            style="text-align: center; background-color: black;" item-width="150px">
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="" >
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >                
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="" >
-            </ons-carousel-item>
-        </ons-carousel>
+                <ons-carousel-item>
+                <img class="card-img-top logo carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
+                </ons-carousel-item>
             </div>`;
+            console.log(doc.data().id);
+            $('#carousel').append(row);
+        });
+    });
+
+
+
+    db.collection("continue").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = `<div class="text-center width" >
+                <ons-carousel-item width="150px">
+                <img class="card-img-top logo sizeposter" src="${doc.data().img}" alt="" id="${doc.data().id}">
+                </ons-carousel-item>
+            </div>`;
+            console.log(doc.data().id);
             $('#continue').append(row);
         });
     });
+
+    // db.collection("continue").get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         var row = `<div class="text-center">
+    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
+    //         style="text-align: center; background-color: black;" item-width="150px">
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >                
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="" >
+    //         </ons-carousel-item>
+    //     </ons-carousel>
+    //         </div>`;
+    //         $('#continue').append(row);
+    //     });
+    // });
 
     db.collection("trends").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -77,7 +113,7 @@ $(function() {
         });
     });
 
-    db.collection("poc").get().then((querySnapshot) => {
+    db.collection("recommend").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center">
             <ons-carousel swipeable auto-scroll overscrollable id="carousel"
@@ -94,12 +130,10 @@ $(function() {
             <ons-carousel-item>
             <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
             </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster5}" alt="">
-            </ons-carousel-item>
+        
         </ons-carousel>
             </div>`;
-            $('#poc').append(row);
+            $('#recommend').append(row);
         });
     });
 
@@ -132,24 +166,5 @@ $(function() {
         });
     });
 
+
 })
-
-
-
-document.addEventListener('init', function(event) {
-    var page = event.target;
-    console.log(page.id);
-    if (page.id === 'page1') {
-        page.querySelector('#tennet').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('/views/blackwidow.html');
-
-        };
-    } else if (page.id === 'bw' || page.id === 'bb') {
-        $('#back').show();
-        document.querySelector('ons-back-button').onclick = function(event) {
-            document.querySelector('#myNavigator').popPage();
-        };
-
-    }
-
-});

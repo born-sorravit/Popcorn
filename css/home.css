@@ -42,7 +42,7 @@
 
 .topicblue {
     color: #33CCFF;
-    font-size: 28px;
+    font-size: 26px;
     padding: 10px 0 10px 20px;
 }
 
@@ -51,15 +51,13 @@
     height: auto;
 }
 
-.poc {
-    color: #33CCFF;
-    font-size: 22px;
-    padding: 10px 0 10px 20px;
-}
-
 .sizeposter {
     width: 130px;
     height: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+
+.width {
+    width: 150px;
 }

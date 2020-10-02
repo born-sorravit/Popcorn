@@ -14,6 +14,28 @@ $(function() {
     firebase.analytics();
     var db = firebase.firestore();
 
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var email = user.email;
+            console.log(`User with email ${email} signed in`);
+            window.location.href = "../index.html";
+        } else {
+
+        }
+    });
+
+    $('#signinemail').click(function() {
+        var email = $('#email').val();
+        var password = $('#password').val();
+        console.log(email, password);
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            $('#errormessage').text(errorMessage);
+        });
+    })
+
     db.collection("logo").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center pd-15">
@@ -23,15 +45,7 @@ $(function() {
         });
     });
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            var email = user.email;
-            console.log(`User with email ${email} signed in`);
-            window.location.href = "index.html";
-        } else {
 
-        }
-    });
 
     $('#signinemail').click(function() {
         var email = $('#email').val();

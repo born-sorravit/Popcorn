@@ -17,7 +17,6 @@ var db = firebase.firestore();
 $(function() {
     document.addEventListener('init', function(event) {
             var page = event.target;
-            console.log(page.id);
             if (page.id === 'page1') {
                 getmovie();
                 getmovie2();
@@ -66,116 +65,11 @@ $(function() {
             console.log(doc.data().id);
             $('#carousel').append(row);
         });
+        document.querySelector('#blackWidow').onclick = function() {
+            document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
+        };
     });
 
-
-    // var bigCarousel = document.createElement('ons-carousel');
-    // bigCarousel.setAttribute("swipeable", "");
-    // bigCarousel.setAttribute("auto-scroll", "");
-    // bigCarousel.setAttribute("overscrollable", "");
-    // bigCarousel.setAttribute("item-width", "150px");
-    // bigCarousel.setAttribute("id", "CarouselMovie");
-    // $('#continue').append(bigCarousel);
-    // console.log(bigCarousel);
-    // db.collection("continue").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         // var row =
-    //         //     `<div class="width">
-    //         //     <ons-carousel-item>
-    //         //     <img class="card-img-top sizeposter" src="${doc.data().img}" alt="" id="${doc.data().id}">
-    //         //     </ons-carousel-item></div>`;
-
-
-    //         // console.log(row);
-    //         var row = `
-    //         <div id="${doc.data().id}" style="width:150px">
-    //             <ons-carousel-item>
-    //                 <img src="${doc.data().img}" width="100%">
-    //             </ons-carousel-item>
-    //         </div>`
-
-
-    //         $('#CarouselMovie').append(row);
-    //     });
-    //     $('ons-carousel-item').click(function() {})
-    // });
-
-    // db.collection("continue").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         var row = `<div class="text-center">
-    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-    //         style="text-align: center; background-color: black;" item-width="150px">
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >                
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="" >
-    //         </ons-carousel-item>
-    //     </ons-carousel>
-    //         </div>`;
-    //         $('#continue').append(row);
-    //     });
-    // });
-
-
-
-    // db.collection("recommend").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         var row = `<div class="text-center">
-    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-    //         style="text-align: center; background-color: black;" item-width="150px">
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
-    //         </ons-carousel-item>
-
-    //     </ons-carousel>
-    //         </div>`;
-    //         $('#recommend').append(row);
-    //     });
-    // });
-
-
-    // db.collection("tennet").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         var row = `<div class="text-center">
-
-
-
-    //         <span class="list-item__title titleDetail" src="${doc.data().poster}"></span>
-    //         <span class="list-item__subtitle" src="${doc.data().story}"></span>
-    //         </div>`;
-    //         $('#tennet').append(row);
-    //     });
-    // });
-
-
-    db.collection("tennet").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = `
-        <img class="card-img-top" src="${doc.data().poster}">
-        <div class="card-body">
-            <h4 class="card-title">${doc.data().title}(${doc.data().year})</h4>
-            <p class="card-text">${doc.data().title}(${doc.data().story}</p>
-        </div>`
-            $("#watchtennet").append(row);
-
-        });
-    });
 
 
 })
@@ -203,41 +97,11 @@ function getmovie() {
         $('img').click(function() {
 
             const idposter = $(this).attr('id');
-            console.log(idposter);
-
         })
 
 
 
     });
-
-
-
-    // db.collection("recommend").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         var row = `<div class="text-center">
-    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-    //         style="text-align: center; background-color: black;" item-width="150px">
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
-    //         </ons-carousel-item>
-
-    //     </ons-carousel>
-    //         </div>`;
-    //         $('#recommend').append(row);
-    //     });
-    // });
-
-
 }
 
 function getmovie2() {
@@ -300,28 +164,21 @@ function getmovie3() {
 
         })
     });
-
-
-    // db.collection("trends").get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         var row = `<div class="text-center">
-    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-    //         style="text-align: center; background-color: black;" item-width="150px">
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="">
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="">                
-    //         </ons-carousel-item>
-    //         <ons-carousel-item>
-    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">
-    //         </ons-carousel-item>
-    //     </ons-carousel>
-    //         </div>`;
-    //         $('#trends').append(row);
-    //     });
-    // });
 }
+
+
+document.addEventListener('init', function(event) {
+        var page = event.target;
+        console.log(page.id);
+        if (page.id === 'page1') {
+
+            // page.querySelector('#blackWidow').onclick = function() {
+            //     document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
+            // };
+        } else if (page.id === 'bw' || page.id === 'bb') {
+
+        };
+
+    }
+
+);

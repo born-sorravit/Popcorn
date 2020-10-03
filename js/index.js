@@ -13,12 +13,16 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.firestore();
 
+
 $(function() {
     document.addEventListener('init', function(event) {
             var page = event.target;
             console.log(page.id);
             if (page.id === 'page1') {
                 getmovie();
+                getmovie2();
+                getmovie3();
+
             };
 
         }
@@ -119,52 +123,31 @@ $(function() {
     //     });
     // });
 
-    db.collection("trends").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = `<div class="text-center">
-            <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-            style="text-align: center; background-color: black;" item-width="150px">
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="">
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="">                
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">
-            </ons-carousel-item>
-        </ons-carousel>
-            </div>`;
-            $('#trends').append(row);
-        });
-    });
 
-    db.collection("recommend").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = `<div class="text-center">
-            <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-            style="text-align: center; background-color: black;" item-width="150px">
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
-            </ons-carousel-item>
-            <ons-carousel-item>
-            <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
-            </ons-carousel-item>
-        
-        </ons-carousel>
-            </div>`;
-            $('#recommend').append(row);
-        });
-    });
+
+    // db.collection("recommend").get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         var row = `<div class="text-center">
+    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
+    //         style="text-align: center; background-color: black;" item-width="150px">
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
+    //         </ons-carousel-item>
+
+    //     </ons-carousel>
+    //         </div>`;
+    //         $('#recommend').append(row);
+    //     });
+    // });
 
 
     // db.collection("tennet").get().then((querySnapshot) => {
@@ -188,8 +171,7 @@ $(function() {
         <div class="card-body">
             <h4 class="card-title">${doc.data().title}(${doc.data().year})</h4>
             <p class="card-text">${doc.data().title}(${doc.data().story}</p>
-        </div>
-    </div>`
+        </div>`
             $("#watchtennet").append(row);
 
         });
@@ -199,24 +181,117 @@ $(function() {
 })
 
 function getmovie() {
-    var bigCarousel = document.createElement('ons-carousel');
-    bigCarousel.setAttribute("swipeable", "");
-    bigCarousel.setAttribute("auto-scroll", "");
-    bigCarousel.setAttribute("overscrollable", "");
-    bigCarousel.setAttribute("item-width", "150px");
-    bigCarousel.setAttribute("id", "CarouselMovie");
-    $('#continue').append(bigCarousel);
-    console.log(bigCarousel);
+
+    var continueCarousel = document.createElement('ons-carousel');
+    continueCarousel.setAttribute("swipeable", "");
+    continueCarousel.setAttribute("auto-scroll", "");
+    continueCarousel.setAttribute("overscrollable", "");
+    continueCarousel.setAttribute("item-width", "150px");
+    continueCarousel.setAttribute("id", "CarouselMovie");
+    $('#continue').append(continueCarousel);
+    console.log(continueCarousel);
 
     db.collection("continue").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = ` <div style="width:150px;" >
                 <ons-carousel-item>
-                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px">
+                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
                 </ons-carousel-item>
             </div>`
-            console.log(doc.data());
             $('#CarouselMovie').append(row);
+        });
+        $('img').click(function() {
+
+            const idposter = $(this).attr('id');
+            console.log(idposter);
+
+        })
+
+
+
+    });
+
+
+
+    // db.collection("recommend").get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         var row = `<div class="text-center">
+    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
+    //         style="text-align: center; background-color: black;" item-width="150px">
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="" >
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">                
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
+    //         </ons-carousel-item>
+
+    //     </ons-carousel>
+    //         </div>`;
+    //         $('#recommend').append(row);
+    //     });
+    // });
+
+
+}
+
+function getmovie2() {
+
+    var recommendCarousel = document.createElement('ons-carousel');
+    recommendCarousel.setAttribute("swipeable", "");
+    recommendCarousel.setAttribute("auto-scroll", "");
+    recommendCarousel.setAttribute("overscrollable", "");
+    recommendCarousel.setAttribute("item-width", "150px");
+    recommendCarousel.setAttribute("id", "CarouselMovie2");
+    $('#recommend').append(recommendCarousel);
+    console.log(recommendCarousel);
+
+
+
+    db.collection("recommend").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = ` <div style="width:150px;" >
+                <ons-carousel-item>
+                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
+                </ons-carousel-item>
+            </div>`
+            $('#CarouselMovie2').append(row);
+        });
+        $('img').click(function() {
+
+            const idposter = $(this).attr('id');
+            console.log(idposter);
+
+        })
+    });
+}
+
+function getmovie3() {
+
+    var trendsCarousel = document.createElement('ons-carousel');
+    trendsCarousel.setAttribute("swipeable", "");
+    trendsCarousel.setAttribute("auto-scroll", "");
+    trendsCarousel.setAttribute("overscrollable", "");
+    trendsCarousel.setAttribute("item-width", "150px");
+    trendsCarousel.setAttribute("id", "CarouselMovie3");
+    $('#trends').append(trendsCarousel);
+    console.log(trendsCarousel);
+
+
+
+    db.collection("trends").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = ` <div style="width:150px;" >
+                <ons-carousel-item>
+                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
+                </ons-carousel-item>
+            </div>`
+            $('#CarouselMovie3').append(row);
         });
         $('img').click(function() {
 
@@ -226,4 +301,27 @@ function getmovie() {
         })
     });
 
+
+    // db.collection("trends").get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         var row = `<div class="text-center">
+    //         <ons-carousel swipeable auto-scroll overscrollable id="carousel"
+    //         style="text-align: center; background-color: black;" item-width="150px">
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster2}" alt="">
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster4}" alt="">
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster1}" alt="">                
+    //         </ons-carousel-item>
+    //         <ons-carousel-item>
+    //         <img class="card-img-top logo sizeposter" src="${doc.data().poster3}" alt="">
+    //         </ons-carousel-item>
+    //     </ons-carousel>
+    //         </div>`;
+    //         $('#trends').append(row);
+    //     });
+    // });
 }

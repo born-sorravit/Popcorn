@@ -62,12 +62,23 @@ $(function() {
                 <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
                 </ons-carousel-item>
             </div>`;
-            console.log(doc.data().id);
             $('#carousel').append(row);
         });
         document.querySelector('#blackWidow').onclick = function() {
             document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
         };
+    });
+
+    db.collection("watchBlackWidow").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = `<div class="text-center">
+                <ons-carousel-item>
+                <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
+                </ons-carousel-item>
+            </div>`;
+            $('#watchBlackWidow').append(row);
+        });
+
     });
 
 
@@ -83,7 +94,6 @@ function getmovie() {
     continueCarousel.setAttribute("item-width", "150px");
     continueCarousel.setAttribute("id", "CarouselMovie");
     $('#continue').append(continueCarousel);
-    console.log(continueCarousel);
 
     db.collection("continue").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -113,7 +123,6 @@ function getmovie2() {
     recommendCarousel.setAttribute("item-width", "150px");
     recommendCarousel.setAttribute("id", "CarouselMovie2");
     $('#recommend').append(recommendCarousel);
-    console.log(recommendCarousel);
 
 
 
@@ -144,7 +153,6 @@ function getmovie3() {
     trendsCarousel.setAttribute("item-width", "150px");
     trendsCarousel.setAttribute("id", "CarouselMovie3");
     $('#trends').append(trendsCarousel);
-    console.log(trendsCarousel);
 
 
 
@@ -160,7 +168,6 @@ function getmovie3() {
         $('img').click(function() {
 
             const idposter = $(this).attr('id');
-            console.log(idposter);
 
         })
     });

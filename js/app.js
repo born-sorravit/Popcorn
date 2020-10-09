@@ -1,4 +1,4 @@
-$(function() {
+
 document.addEventListener('init', function (event) {
     var page = event.target;
     console.log(page.id);
@@ -19,4 +19,3 @@ document.addEventListener('init', function (event) {
 
     }
 });
-})

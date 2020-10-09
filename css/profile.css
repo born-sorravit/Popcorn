@@ -1,3 +1,5 @@
+
+
 .headderf{
     font-weight: bold;
     font-size: 36px;
@@ -29,4 +31,10 @@
     font-weight: bold;
     font-size: 16px;
     color: #dbdedf	;
+}
+.headderpageprofile{
+    font-weight: bold;
+    font-size: 24px;
+    color: #33CCFF	;
+}
 }

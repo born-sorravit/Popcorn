@@ -24,6 +24,10 @@ $(function() {
         }
     });
 
+    $('#register').click(function() {
+        d
+    })
+
     $('#signinemail').click(function() {
         var email = $('#email').val();
         var password = $('#password').val();

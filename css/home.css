@@ -62,3 +62,8 @@
     width: 150px;
     height: 200px;
 }
+
+.previewsize {
+    height: 220px;
+    width: 100%;
+}

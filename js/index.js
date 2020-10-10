@@ -168,13 +168,13 @@ function getmovieDetail(Target) {
                 console.log(doc.data());
                 const result =
                     `<div class="text-center">
-                        <img class="card-img-top carouselPoster" src="${doc.data().preview}" alt="" style="padding-top: 20px;">
+                        <img class="card-img-top previewsize" src="${doc.data().preview}"  alt="" style="padding-top: 20px;">
                     </div>
                     <div class="container">
                         <div>
                             <div style="color: #33ccff; font-size: 20px; margin-top: 10px;"><b>${doc.data().title}</b></div>
                             <div class="row" style="color: grey; font-size: 16px; margin-top: 5px;">
-                                <div class="col-8">2hr 32min PG-13 2020</div>
+                                <div class="col-8">${doc.data().detail}</div>
                                 <div class="col-4 text-right"><i class="far fa-heart" style="color: white;font-size: 30px;" aria-hidden="true"></i></div>
                             </div>
                             <div style="color: white;font-size: 16px; margin-top: 5px; ">

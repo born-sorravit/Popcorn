@@ -21,7 +21,6 @@ $(function() {
                 getmovie();
                 getmovie2();
                 getmovie3();
-
             };
 
         }
@@ -53,33 +52,22 @@ $(function() {
         });
     });
 
-
-
     db.collection("carousel").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<div class="text-center">
-                <ons-carousel-item>
-                <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
-                </ons-carousel-item>
-            </div>`;
+            var row = `<div class="text-center NewMovie">
+                            <ons-carousel-item>
+                            <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
+                            </ons-carousel-item>
+                        </div>`;
             $('#carousel').append(row);
         });
-        document.querySelector('#blackWidow').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
-        };
+        $('.NewMovie img').click(function() {
+            const aa = $(this).attr('id')
+            getmovieDetail(aa)
+            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
+        })
     });
 
-    db.collection("watchBlackWidow").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = `<div class="text-center">
-                <ons-carousel-item>
-                <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
-                </ons-carousel-item>
-            </div>`;
-            $('#watchBlackWidow').append(row);
-        });
-
-    });
 
 
 
@@ -97,18 +85,18 @@ function getmovie() {
 
     db.collection("continue").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" >
+            var row = ` <div style="width:150px;" id="continue">
                 <ons-carousel-item>
                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
                 </ons-carousel-item>
             </div>`
             $('#CarouselMovie').append(row);
         });
-        $('img').click(function() {
-
-            const idposter = $(this).attr('id');
+        $('#continue img').click(function() {
+            const aa = $(this).attr('id')
+            getmovieDetail(aa)
+            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
         })
-
 
 
     });
@@ -128,18 +116,17 @@ function getmovie2() {
 
     db.collection("recommend").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" >
+            var row = ` <div style="width:150px;" id="recommend" >
                 <ons-carousel-item>
                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
                 </ons-carousel-item>
             </div>`
             $('#CarouselMovie2').append(row);
         });
-        $('img').click(function() {
-
-            const idposter = $(this).attr('id');
-            console.log(idposter);
-
+        $('#recommend img').click(function() {
+            const aa = $(this).attr('id')
+            getmovieDetail(aa)
+            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
         })
     });
 }
@@ -158,33 +145,71 @@ function getmovie3() {
 
     db.collection("trends").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" >
+            var row = ` <div style="width:150px;" id="trends">
                 <ons-carousel-item>
                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
                 </ons-carousel-item>
             </div>`
             $('#CarouselMovie3').append(row);
         });
-        $('img').click(function() {
-
-            const idposter = $(this).attr('id');
-
+        $('#trends img').click(function() {
+            const aa = $(this).attr('id')
+            getmovieDetail(aa)
+            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
         })
     });
 }
 
+function getmovieDetail(Target) {
+    console.log(Target);
+    db.collection("movieDetail").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            if (doc.data().id == Target) {
+                console.log(doc.data());
+                const result =
+                    `<div class="text-center">
+                        <img class="card-img-top carouselPoster" src="${doc.data().preview}" alt="" style="padding-top: 20px;">
+                    </div>
+                    <div class="container">
+                        <div>
+                            <div style="color: #33ccff; font-size: 20px; margin-top: 10px;"><b>${doc.data().title}</b></div>
+                            <div class="row" style="color: grey; font-size: 16px; margin-top: 5px;">
+                                <div class="col-8">2hr 32min PG-13 2020</div>
+                                <div class="col-4 text-right"><i class="far fa-heart" style="color: white;font-size: 30px;" aria-hidden="true"></i></div>
+                            </div>
+                            <div style="color: white;font-size: 16px; margin-top: 5px; ">
+                            ${doc.data().story}
+                            </div>
+                        </div>
+                    </div>`
+                $("#movieDetail").append(result)
+            }
+        });
+    });
+}
 
 document.addEventListener('init', function(event) {
         var page = event.target;
-        console.log(page.id);
+        // var paagedetail = 
         if (page.id === 'page1') {
 
             // page.querySelector('#blackWidow').onclick = function() {
             //     document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
             // };
-        } else if (page.id === 'bw' || page.id === 'bb') {
 
-        };
+
+        } else if (page.id === "blackWidow" || page.id === "jamesBond") {
+            db.collection("movieDetail").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    var row = `<div class="text-center">
+                        <ons-carousel-item>
+                        <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
+                        </ons-carousel-item>
+                    </div>`;
+                    $('#carousel222').append(row);
+                });
+            });
+        }
 
     }
 

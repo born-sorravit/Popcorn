@@ -161,11 +161,9 @@ function getmovie3() {
 }
 
 function getmovieDetail(Target) {
-    console.log(Target);
     db.collection("movieDetail").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
-                console.log(doc.data());
                 const result =
                     `<div class="text-center">
                         <img class="card-img-top previewsize" src="${doc.data().preview}"  alt="" style="padding-top: 20px;">
@@ -174,8 +172,9 @@ function getmovieDetail(Target) {
                         <div>
                             <div style="color: #33ccff; font-size: 20px; margin-top: 10px;"><b>${doc.data().title}</b></div>
                             <div class="row" style="color: grey; font-size: 16px; margin-top: 5px;">
+                                <div class="col-8">${doc.data().type}</div>                                
                                 <div class="col-8">${doc.data().detail}</div>
-                                <div class="col-4 text-right"><i class="far fa-heart" style="color: white;font-size: 30px;" aria-hidden="true"></i></div>
+
                             </div>
                             <div style="color: white;font-size: 16px; margin-top: 5px; ">
                             ${doc.data().story}
@@ -188,29 +187,29 @@ function getmovieDetail(Target) {
     });
 }
 
-document.addEventListener('init', function(event) {
-        var page = event.target;
-        // var paagedetail = 
-        if (page.id === 'page1') {
+// document.addEventListener('init', function(event) {
+//         var page = event.target;
+//         // var paagedetail = 
+//         if (page.id === 'page1') {
 
-            // page.querySelector('#blackWidow').onclick = function() {
-            //     document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
-            // };
+//             // page.querySelector('#blackWidow').onclick = function() {
+//             //     document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
+//             // };
 
 
-        } else if (page.id === "blackWidow" || page.id === "jamesBond") {
-            db.collection("movieDetail").get().then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    var row = `<div class="text-center">
-                        <ons-carousel-item>
-                        <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
-                        </ons-carousel-item>
-                    </div>`;
-                    $('#carousel222').append(row);
-                });
-            });
-        }
+//         } else if (page.id === "blackWidow" || page.id === "jamesBond") {
+//             db.collection("movieDetail").get().then((querySnapshot) => {
+//                 querySnapshot.forEach((doc) => {
+//                     var row = `<div class="text-center">
+//                         <ons-carousel-item>
+//                         <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
+//                         </ons-carousel-item>
+//                     </div>`;
+//                     $('#carousel222').append(row);
+//                 });
+//             });
+//         }
 
-    }
+//     }
 
-);
+// );

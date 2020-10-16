@@ -5,22 +5,23 @@
   text-align: center;
 }
 .headdersubfont {
-    font-weight: bold;
-    font-size: 30px;
-    color: #33ccff;
-    text-align: center;
-  }
-.back-button{
-    text-align: left;
+  font-weight: bold;
+  font-size: 30px;
+  color: #33ccff;
+  text-align: center;
+}
+.back-button {
+  text-align: left;
 }
 .headderpadding {
   padding-top: 10px;
   padding-left: 20px;
 }
 .headderpaddingTop {
-    padding-top: 20px;
-    text-align: center;
+  padding-top: 20px;
+  text-align: center;
 }
+
 .topixfont {
   font-weight: bold;
   font-size: 24px;
@@ -92,6 +93,12 @@
   -webkit-align-self: flex-start;
   align-self: flex-start;
 }
+.list-edit-subtitle{
+  font-size: 14px;
+  color: #33ccff;
+  padding-left: 45px;
+  text-align: left;
+}
 .list-title {
   -webkit-flex-basis: 100%;
   color: #dbdedf;
@@ -104,4 +111,47 @@
   -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
   order: 0;
+}
+.sheet-button {
+  box-sizing: border-box;
+  font-size: 28px;
+  text-align: center;
+  color: #fafafa;
+  background-color: #33ccff;
+  border-radius: 0;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+.paddibgbutton{
+  padding-top: 30px;
+}
+.editimage{
+  padding-top: 20px;
+  text-align: center;
+}
+.editimage_thumnail{
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
+.editimage_thumnail{
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  border: 3px solid #dbdedf;
+}
+.tabbar-top{
+  padding-top: 15px;
+}
+.editbuttom{
+  text-align: center;
 }

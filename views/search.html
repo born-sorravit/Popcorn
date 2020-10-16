@@ -1,97 +1,47 @@
 <ons-page id="search">
-    <p style="text-align: left; margin-top: 10px; margin-left:10px">
-        <ons-search-input placeholder="" onchange="ons.notification.alert('Searched for: ' + this.value)"
-            class="searchSize">
-        </ons-search-input>
-    </p>
-    <ons-carousel swipeable auto-scroll overscrollable id="carousel"
-                style="text-align: center; background-color: black;" item-width="105px"> 
-                    <ons-carousel-item><div class="button" style="width: 100px;">Action</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Anime</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Comedy</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Drama</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Horror</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Mystery</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Fantasy</div></ons-carousel-item>
-                    <ons-carousel-item><div class="button" style="width: 100px;">Romance</div></ons-carousel-item> 
-    </ons-carousel>
- 
-    <ons-row class="user_cover">
-<!--         
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
+    <div class="container">
+        <p style="text-align: center; margin-top: 10px;" fullscreen>
+            <ons-search-input placeholder="" onchange="Src()" class="searchSize" id="Srcname">
+            </ons-search-input>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
+        </p>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
+        <ons-carousel swipeable auto-scroll overscrollable id="carouselSearch" style="text-align: center; background-color: black;" item-width="95px">
+            <ons-carousel-item>
+                <div class="button" id="action">Action</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="anime">Anime</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="comedy">Comedy</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="drama">Drama</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="horror">Horror</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="mystery">Mystery</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="fantasy">Fantasy</div>
+            </ons-carousel-item>
+            <ons-carousel-item>
+                <div class="button" id="romance">Romance</div>
+            </ons-carousel-item>
+        </ons-carousel>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
+        <ons-row class="user_cover" id="listMovie">
+        </ons-row>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
+    </div>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col>
 
-        <ons-col onclick="openHome()">
-            <div class="user_thumbnail">
-                <img src="/image/bw.jpg" alt="" class="searchPoster"> 
-            </div>
-            <div class="username" id="user_2_name">BLACK WIDOW (2020)</div>
-        </ons-col> -->
 
- 
-      </ons-row>
- 
-     
 
-    
-</ons-page>  
+</ons-page>

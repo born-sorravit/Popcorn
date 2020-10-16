@@ -30,22 +30,21 @@
       border-radius: 10px;
   }
   .button{
-    display: table-cell;
-    border-radius: 20px; 
-    margin-left: 10px;
-    margin-right:10px;
-    background-color: #33CCFF;
+    text-align: center;
+    /* display: flex; */
+    border-radius: 20px;  
+    background-color: #33CCFF; 
+    width: 85px;
+    font-size: 15px;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 15px;
+
   }
 
-  .btn {
-    border: none;
-    background-color: inherit;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-  }
-  
+
   /* On mouse-over */
   .btn:hover {background: #eee;}
   
@@ -54,3 +53,6 @@
   .warning {color: orange;}
   .danger {color: red;}
   .default {color: black;}
+
+
+  

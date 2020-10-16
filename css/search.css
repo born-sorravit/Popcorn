@@ -1,74 +1,18 @@
-/* .user_cover {
-    padding: 0px 15px;
-    margin: 20px 10px 10px;
-  }
-
-  .username {
-    text-align: left;
-    color: white;
-    width: 100%;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-
-  .user_thumbnail {
-    width: 100px;
-    height: 100px;
-    display: table-cell;
-    text-align: center;
-    margin: auto;
-  }
-  
-
-  .user_thumbnail ons-icon {
-    font-size: 70px;
-    display: table-cell;
-    vertical-align: middle;
-  }
-
-  .searchPoster{
-      border-radius: 10px;
-  }
-  .button{ 
-    text-align: center;
-    border-radius: 20px;  
-    background-color: #33CCFF; 
-    width: 85px;
-    font-size: 15px;
-    border: none;
-    display: inline-block;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-left: 15px;
-
-  } */
-
-
-  /* On mouse-over */
-  /* .btn:hover {background: #eee;}
-  
-  .success {color: green;}
-  .info {color: dodgerblue;}
-  .warning {color: orange;}
-  .danger {color: red;}
-  .default {color: black;} */
-
-
 .user_cover {
     margin-top: 10px;
 }
-/* 
+
 .ml-5 {
     margin-left: 5px;
 }
 
 .mt-5 {
     margin-top: 5px;
-} */
+}
 
-/* .margin-5 {
+.margin-5 {
     margin: 5px;
-} */
+}
 
 .areaMovie {
     margin-left: auto;

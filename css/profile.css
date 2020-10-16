@@ -53,3 +53,11 @@
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
+.icon-color-menusetting{
+    color: #dbdedf; 
+    width: 50px;
+}
+.icon-color-signout{
+    color: red; 
+    width: 50px;
+}

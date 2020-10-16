@@ -21,7 +21,16 @@ $(function() {
                 getmovie();
                 getmovie2();
                 getmovie3();
-            };
+            } else if (page.id === 'profile') {
+                console.log("ENEE");
+                $('#signout').click(function() {
+                    firebase.auth().signOut().then(function() {
+                        // Sign-out successful.
+                    }).catch(function(error) {
+                        // An error happened.
+                    });
+                })
+            }
 
         }
 
@@ -38,14 +47,6 @@ $(function() {
         }
     });
 
-
-    $('#signout').click(function() {
-        firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
-        });
-    })
 
     db.collection("logo").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {

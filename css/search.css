@@ -1,4 +1,4 @@
-.user_cover {
+/* .user_cover {
     padding: 0px 15px;
     margin: 20px 10px 10px;
   }
@@ -29,9 +29,8 @@
   .searchPoster{
       border-radius: 10px;
   }
-  .button{
+  .button{ 
     text-align: center;
-    /* display: flex; */
     border-radius: 20px;  
     background-color: #33CCFF; 
     width: 85px;
@@ -42,17 +41,131 @@
     margin-right: 10px;
     margin-left: 15px;
 
-  }
+  } */
 
 
   /* On mouse-over */
-  .btn:hover {background: #eee;}
+  /* .btn:hover {background: #eee;}
   
   .success {color: green;}
   .info {color: dodgerblue;}
   .warning {color: orange;}
   .danger {color: red;}
-  .default {color: black;}
+  .default {color: black;} */
 
 
-  
+.user_cover {
+    margin-top: 10px;
+}
+/* 
+.ml-5 {
+    margin-left: 5px;
+}
+
+.mt-5 {
+    margin-top: 5px;
+} */
+
+/* .margin-5 {
+    margin: 5px;
+} */
+
+.areaMovie {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    padding-right: 0px;
+    padding-left: 7px;
+}
+
+.mt-5,
+.my-5 {
+    margin-top: 0.5rem!important;
+}
+
+.username {
+    text-align: left;
+    color: white;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.user_thumbnail {
+    width: 100px;
+    height: 100px;
+    display: table-cell;
+    text-align: center;
+    /* margin: auto; */
+}
+
+.user_thumbnail ons-icon {
+    font-size: 70px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.searchPoster {
+    border-radius: 10px;
+}
+
+
+.button {
+    /* display: table-cell;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #33CCFF; */
+    text-align: center;
+    border-radius: 20px;  
+    background-color: #33CCFF; 
+    width: 85px;
+    font-size: 15px;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+ons-input .text-input,
+ons-search-input .search-input {
+    width: 100%;
+    display: inline-block;
+}
+
+
+/* On mouse-over */
+
+.btn:hover {
+    background: #eee;
+}
+
+.success {
+    color: green;
+}
+
+.info {
+    color: dodgerblue;
+}
+
+.warning {
+    color: orange;
+}
+
+.danger {
+    color: red;
+}
+
+.default {
+    color: black;
+}

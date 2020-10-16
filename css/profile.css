@@ -4,6 +4,15 @@
   color: #33ccff;
   text-align: center;
 }
+.headdersubfont {
+    font-weight: bold;
+    font-size: 30px;
+    color: #33ccff;
+    text-align: center;
+  }
+.back-button{
+    text-align: left;
+}
 .headderpadding {
   padding-top: 10px;
   padding-left: 20px;

@@ -1,5 +1,5 @@
 .user_cover {
-    margin-top: 10px;
+    margin-top: 10px;  
 }
 
 .ml-5 {
@@ -15,11 +15,10 @@
 }
 
 .areaMovie {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
+    margin-right: 5px;
     width: 100px;
-    padding-right: 0px;
-    padding-left: 7px;
+    padding-left: 5px;
 }
 
 .mt-5,
@@ -39,8 +38,7 @@
     width: 100px;
     height: 100px;
     display: table-cell;
-    text-align: center;
-    /* margin: auto; */
+    text-align: center; 
 }
 
 .user_thumbnail ons-icon {
@@ -50,16 +48,14 @@
 }
 
 .searchPoster {
-    border-radius: 10px;
+    border-radius: 10px; 
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-
-.button {
-    /* display: table-cell;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #33CCFF; */
+.button { 
     text-align: center;
     border-radius: 20px;  
     background-color: #33CCFF; 
@@ -69,7 +65,7 @@
     display: inline-block;
     text-decoration: none;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 10px;  
 }
 
 .btn {

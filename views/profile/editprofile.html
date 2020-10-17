@@ -5,55 +5,44 @@
     </div>
     <div class="center headderpageprofile">EDIT PROFILE</div>
   </ons-toolbar>
-  <div class="editimage">
+  <div class="editimage pt-3">
     <img class="editimage_thumnail"
       src="https://scontent.fbkk14-1.fna.fbcdn.net/v/t1.0-9/56196772_1931546596957661_8472358552306974720_o.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_eui2=AeEvYXA8KcZE6s0QLcpdo5Inyc_2GOTLJW3Jz_YY5MslbV96_qce8d0OusGgmwmTrFyFTpnufZZHl4w7H41xI9oK&_nc_ohc=CnorxfKI_2oAX92h4Ih&_nc_ht=scontent.fbkk14-1.fna&oh=ab19c85a477776e3e498679804c66dfe&oe=5F9AEF79"
       alt="Cute kitten" />
   </div>
-  <div class="container tabbar-top editbuttom">
-    <ul class="list">
-      <li class="list-item">
-        <div class="list-item__center">
-          <input type="file" class="form-control-file font-input-images "  id="exampleFormControlFile1">
-        </div>
-      </li>
-      <li class="list-header list-edit-subtitle">
-        NAME :
-      </li>
-      <li class="list-item">
-        <div class="list-item__center">
-          <input type="text" class="text-input" placeholder="WATTANA PONGPAEW">
-        </div>
-      </li>
-      <li class="list-header list-edit-subtitle">
-        EMAIL :
-      </li>
-      <li class="list-item">
-        <div class="list-item__center">
-          <input type="text" class="text-input" placeholder="endnapadad25@gmail.com">
-        </div>
-      </li>
-      <li class="list-header list-edit-subtitle">
-        GENDER :
-      </li>
-      <li class="list-item">
-        <div class="list-item__center">
-          <input type="text" class="text-input" placeholder="MALE">
-        </div>
-      </li>
-      <li class="list-header list-edit-subtitle">
-        DOB :
-      </li>
-      <li class="list-item">
-        <div class="list-item__center">
-          <input type="text" class="text-input" placeholder="27/01/2542">
-        </div>
-      </li>
-    </ul>
-    <div class="paddibgbutton">
-      <p class="text-center">
-        <button type="submit" class="btn btn-primary" >CONFIRM</button>
-    </p>
+
+  <div class="text-center">
+    <div class="container tabbar-top editbuttom" style="text-align: center;">
+
+      <div class="form-group pt-1">
+        <h4 class="pl-5 edit-box">Name :</h4>
+        <input class="form-control form-control-sm ml-mr-auto edit-size-box" id="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <h4 class="pl-5 edit-box">Lastname :</h4>
+        <input class="form-control form-control-sm ml-mr-auto edit-size-box" id="lastname" placeholder="Lastname">
+
+      </div>
+      <div class="form-group">
+        <h4 class="pl-5 edit-box">DOB :</h4>
+        <input class="form-control form-control-sm ml-mr-auto edit-size-box" id="Gender" placeholder="27/01/2542">
+
+      </div>
+      <div class="form-group">
+        <h4 class="pl-5 edit-box">Gender :</h4>
+        <select class="custom-select mr-sm-2 edit-size-box" id="inlineFormCustomSelect">
+          <option selected >Male</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+          <option value="3">N/A</option>
+        </select>
+      </div>
     </div>
+  </div>
+  <div class="pt-1">
+    <p class="text-center">
+      <button type="submit" class="btn btn-primary">CONFIRM</button>
+    </p>
+  </div>
   </div>
 </ons-page>

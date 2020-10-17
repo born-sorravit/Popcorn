@@ -160,3 +160,12 @@
   text-align: center;
   padding-top: 15px;
 }
+.edit-box{
+  color: white;
+  text-align: left;
+}
+.edit-size-box{
+  width: 75%; 
+  display: initial;
+  height: 35px;
+}

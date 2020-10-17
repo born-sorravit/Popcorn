@@ -95,9 +95,10 @@
 }
 .list-edit-subtitle{
   font-size: 14px;
-  color: #000000;
+  color:  #33ccff;
   font-weight: bold;
   text-align: left;
+  background-color: black;
 }
 .list-title {
   -webkit-flex-basis: 100%;
@@ -169,3 +170,11 @@
   display: initial;
   height: 35px;
 }
+.page__background_black{
+background-color: black;
+
+}
+.page__background_gray{
+  background-color:#282828;
+  color: #dbdedf;
+  }

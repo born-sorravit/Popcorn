@@ -93,9 +93,9 @@
   -webkit-align-self: flex-start;
   align-self: flex-start;
 }
-.list-edit-subtitle{
+.list-edit-subtitle {
   font-size: 14px;
-  color:  #33ccff;
+  color: #33ccff;
   font-weight: bold;
   text-align: left;
   background-color: black;
@@ -132,50 +132,59 @@
     rgba(0, 0, 0, 0.1) 100%
   );
 }
-.paddibgbutton{
+.paddibgbutton {
   padding-top: 30px;
 }
-.editimage{
+.editimage {
   padding-top: 20px;
   text-align: center;
 }
-.editimage_thumnail{
+.editimage_thumnail {
   width: 120px;
   height: 120px;
   border-radius: 100%;
 }
-.editimage_thumnail{
+.editimage_thumnail {
   width: 160px;
   height: 160px;
   border-radius: 100%;
   border: 3px solid #dbdedf;
 }
-.tabbar-top{
+.tabbar-top {
   padding-top: 15px;
 }
-.editbuttom{
+.editbuttom {
   text-align: center;
 }
-.font-input-images{
+.font-input-images {
   color: #33ccff;
   text-align: center;
   padding-top: 15px;
 }
-.edit-box{
+.edit-box {
   color: white;
   text-align: left;
 }
-.edit-size-box{
-  width: 75%; 
+.edit-size-box {
+  width: 75%;
   display: initial;
   height: 35px;
 }
-.page__background_black{
-background-color: black;
-
+.page__background_black {
+  background-color: black;
 }
-.page__background_gray{
-  background-color:#282828;
+.page__background_gray {
+  background-color: #282828;
   color: #dbdedf;
-  }
-  
+}
+
+.reportbtn {
+  border-radius: 30px;
+  background-color: red;
+}
+
+
+.bluebtn {
+  border-radius: 30px;
+  background-color: #33ccff;
+}

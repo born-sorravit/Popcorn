@@ -95,8 +95,8 @@
 }
 .list-edit-subtitle{
   font-size: 14px;
-  color: #33ccff;
-  padding-left: 45px;
+  color: #000000;
+  font-weight: bold;
   text-align: left;
 }
 .list-title {
@@ -154,4 +154,9 @@
 }
 .editbuttom{
   text-align: center;
+}
+.font-input-images{
+  color: #33ccff;
+  text-align: center;
+  padding-top: 15px;
 }

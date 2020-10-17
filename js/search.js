@@ -1,3 +1,5 @@
+var db = firebase.firestore();
+
 $(function() {
     db.collection("movieDetail").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -25,10 +27,9 @@ function Src() {
 
     const result = document.getElementById('Srcname').value;
     $('#listMovie').empty();
-    db.collection("action").get().then((querySnapshot) => {
+    db.collection("movieDetail").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             const titleMovie = doc.data().title;
-
             if (titleMovie.indexOf(result) != -1) {
                 var row = `<div class="areaMovie" onclick="openHome()">
                                 <div class="user_thumbnail">
@@ -43,6 +44,7 @@ function Src() {
 
         });
     });
+    console.log("count" + i);
 
 }
 

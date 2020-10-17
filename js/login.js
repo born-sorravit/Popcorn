@@ -1,19 +1,7 @@
-$(function() {
-    var firebaseConfig = {
-        apiKey: "AIzaSyDyXjr-BUDZTM5MVKdQvDVMlINCofdTFlo",
-        authDomain: "popcorn-9afb7.firebaseapp.com",
-        databaseURL: "https://popcorn-9afb7.firebaseio.com",
-        projectId: "popcorn-9afb7",
-        storageBucket: "popcorn-9afb7.appspot.com",
-        messagingSenderId: "787336592475",
-        appId: "1:787336592475:web:4b54b4d16cb39e033f537e",
-        measurementId: "G-9JXPL486H7"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    var db = firebase.firestore();
+var db = firebase.firestore();
 
+
+$(function() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var email = user.email;
@@ -24,22 +12,6 @@ $(function() {
         }
     });
 
-    $('#register').click(function() {
-        d
-    })
-
-    $('#signinemail').click(function() {
-        var email = $('#email').val();
-        var password = $('#password').val();
-        console.log(email, password);
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            $('#errormessage').text(errorMessage);
-        });
-    })
-
     db.collection("logo").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center pd-15">
@@ -49,8 +21,6 @@ $(function() {
         });
     });
 
-
-
     $('#signinemail').click(function() {
         var email = $('#email').val();
         var password = $('#password').val();
@@ -62,5 +32,28 @@ $(function() {
             $('#errormessage').text(errorMessage);
         });
     })
+
+    $('#signinGoogle').click(function() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        firebase.auth().signInWithRedirect(provider);
+
+        firebase.auth().getRedirectResult().then(function(result) {
+            if (result.credential) {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                // ...
+            }
+            // The signed-in user info.
+            var user = result.user;
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            $('#errormessage').text(errorMessage);
+        });
+
+    });
 
 })

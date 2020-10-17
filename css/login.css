@@ -21,6 +21,11 @@ hr {
     color: #dbdedf;
 }
 
+.loginGoogle {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
 .checkbox {
     font-size: 18px;
     color: #33CCFF;
@@ -94,4 +99,10 @@ hr {
 .ml-mr-auto {
     margin-left: auto;
     margin-right: auto;
+}
+
+.btn-danger-Google {
+    color: #333333;
+    background-color: white;
+    border-color: white;
 }

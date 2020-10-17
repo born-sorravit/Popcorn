@@ -17,11 +17,14 @@ var db = firebase.firestore();
 $(function() {
     document.addEventListener('init', function(event) {
             var page = event.target;
+            console.log(page.id);
             if (page.id === 'page1') {
                 getmovie();
                 getmovie2();
                 getmovie3();
-            };
+            } else if (page.id === 'blackWidow') {
+                console.log(page.id);
+            }
 
         }
 

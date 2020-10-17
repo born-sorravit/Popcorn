@@ -5,6 +5,7 @@ $(function() {
                             <div class="user_thumbnail margin-15">
                                 <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
                             </div>
+                            <div class="username">${doc.data().title}</div>
                         </div>
                 `;
             $('#listMovie').append(row);
@@ -40,6 +41,7 @@ function Src() {
                                 <div class="user_thumbnail">
                                     <img src="${doc.data().img}" alt="" class="searchPoster"> 
                                 </div>
+                                <div class="username">${doc.data().title}</div>
                             </div>`;
                 $('#listMovie').append(row);
             }
@@ -64,6 +66,7 @@ function getmovieCategory(Type) {
                                 <div class="user_thumbnail">
                                     <img src="${doc.data().img}" alt="" class="searchPoster"> 
                                 </div>
+                                <div class="username">${doc.data().title}</div>
                             </div>`;
                 $('#listMovie').append(row);
             }

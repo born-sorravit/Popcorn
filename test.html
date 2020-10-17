@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <button type="button" class="btn btn-primary" style="font-size: 50px;" id="btnplay">Click</button>
+    </div>
+    <div id="video">
+
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+    <script>
+        document.getElementById('btnplay').onclick = function() {
+            var video = `<video id="my-video" class="video-js" controls preload="auto" autoplay width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                            <source src="/image/THE AMAZING SPIDER-MAN 2 - Official Trailer (HD).mp4" type="video/mp4" />
+                        </video>`
+            document.getElementById('video').innerHTML = video;
+        }
+    </script>
+</body>
+
+</html>

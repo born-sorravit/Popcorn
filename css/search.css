@@ -10,8 +10,8 @@
     margin-top: 5px;
 }
 
-.margin-15 {
-    margin: 15px;
+.mt-10 {
+    margin-top: 10px;
 }
 
 .areaMovie {
@@ -24,7 +24,7 @@
 
 .mt-5,
 .my-5 {
-    margin-top: 0.5rem!important;
+    margin-top: 0.8rem!important;
 }
 
 .username {
@@ -80,7 +80,7 @@ ons-search-input .search-input {
 /* On mouse-over */
 
 .btn:hover {
-    background: #eee;
+    background: #33CCFF;
 }
 
 .success {

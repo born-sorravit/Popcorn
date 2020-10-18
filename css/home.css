@@ -62,3 +62,14 @@
     width: 150px;
     height: 200px;
 }
+
+.playbtn {
+    margin-top: 15px;
+    background-color: #33CCFF;
+    border-radius: 30px;
+    width: 90%;
+}
+
+.watchvideo {
+    width: 100%;
+}

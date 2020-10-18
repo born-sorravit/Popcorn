@@ -4,9 +4,11 @@ var db = firebase.firestore();
 $(function() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            var displayName = user.displayName;
             var email = user.email;
-            console.log(`User with email ${email} signed in`);
-            window.location.href = "../index.html";
+            var photoURL = user.photoURL;
+            window.location.href = "../popcorn.html";
+
         } else {
 
         }
@@ -16,7 +18,7 @@ $(function() {
         querySnapshot.forEach((doc) => {
             var row = `<div class="text-center pd-15">
                         <img class="card-img-top logo" src="${doc.data().popcornlogo}" alt="">
-                       </div>`;
+                    </div>`;
             $('#list').append(row);
         });
     });
@@ -30,6 +32,12 @@ $(function() {
             var errorCode = error.code;
             var errorMessage = error.message;
             $('#errormessage').text(errorMessage);
+        });
+        firebase.auth().onAuthStateChanged(function(user) {
+
+            if (user) {
+                window.location.href = "popcorn.html";
+            }
         });
     })
 

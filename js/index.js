@@ -2,42 +2,36 @@ var db = firebase.firestore();
 
 $(function() {
     document.addEventListener('init', function(event) {
-            var page = event.target;
-            if (page.id === 'page1') {
-                getmovie();
-                getmovie2();
-                getmovie3();
-            } else if (page.id === 'profile') {
-                $('#signout').click(function() {
-                    firebase.auth().signOut().then(function() {
-                        // Sign-out successful.
-                    }).catch(function(error) {
-                        // An error happened.
-                    });
-                })
-            }
-
-        }
-
-    );
-
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            var email = user.email;
-            console.log(`User with email ${email} signed in and yourname ${user.displayName}`);
-            $("#Myname").html(user.displayName)
-
-        } else {
-            window.location.href = "login.html";
+        var page = event.target;
+        if (page.id === 'page1') {
+            getmovie();
+            getmovie2();
+            getmovie3();
+        } else if (page.id === 'profile') {
+            $('#signout').click(function() {
+                console.log("asadad");
+                firebase.auth().signOut().then(function() {
+                    // Sign-out successful.
+                }).catch(function(error) {
+                    // An error happened.
+                });
+            })
         }
     });
 
 
-    db.collection("logo").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = ``;
-            $('#list').append(row);
-        });
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var email = user.email;
+            var displayName = user.displayName;
+            console.log(`User with email ${email} signed in and yourname ${displayName}`);
+            var img = `<img class="list-material__thumbnail" src="${user.photoURL}">`
+            $("#userProfile").append(img)
+            $("#userName").html(displayName)
+
+        } else {
+            window.location.href = "login.html";
+        }
     });
 
     db.collection("carousel").get().then((querySnapshot) => {
@@ -162,43 +156,42 @@ function getmovieDetail(Target) {
                         <div>
                             <div style="color: #33ccff; font-size: 20px; margin-top: 10px;"><b>${doc.data().title}</b></div>
                             <div class="row" style="color: grey; font-size: 16px; margin-top: 5px;">
-                                <div class="col-8">2hr 32min PG-13 2020</div>
-                                <div class="col-4 text-right"><i class="far fa-heart" style="color: white;font-size: 30px;" aria-hidden="true"></i></div>
-                            </div>
+                            <div class="col-8">${doc.data().type}</div>                                
+                            <div class="col-8">${doc.data().detail}</div>
+                        </div>
                             <div style="color: white;font-size: 16px; margin-top: 5px; ">
                             ${doc.data().story}
                             </div>
                         </div>
+                    </div>
+                    <div class="container text-center">
+                        <button name="" id="playmovie" class="btn btn-primary playbtn" style="background-color: #33ccff;">Play Movie</button>
+                        <div class="container" id="autoplay"></div>
                     </div>`
                 $("#movieDetail").append(result)
+
+                $('#playmovie').click(function() {
+                    $('#autoplay').empty();
+                    const movie = `<video id="my-video" class="watchvideo" controls autoplay preload="auto" width="640" height="264" data-setup="{}"> 
+                    <source src="${doc.data().video}" type="video/mp4" />
+                    </video>`
+                    $("#autoplay").append(movie)
+
+                    var Video = document.getElementById('my-video')
+                    Video.requestFullscreen();
+                })
             }
         });
     });
+    db.collection("video").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = `< source src = "${doc.data().video}"
+            type = "video/mp4" / >`
+            $("#my-video").append(row)
+
+        });
+
+    });
+
+
 }
-
-document.addEventListener('init', function(event) {
-        var page = event.target;
-        // var paagedetail = 
-        if (page.id === 'page1') {
-
-            // page.querySelector('#blackWidow').onclick = function() {
-            //     document.querySelector('#myNavigator').pushPage('views/blackwidow.html');
-            // };
-
-
-        } else if (page.id === "blackWidow" || page.id === "jamesBond") {
-            db.collection("movieDetail").get().then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    var row = `<div class="text-center">
-                        <ons-carousel-item>
-                        <img class="card-img-top carouselPoster"  src="${doc.data().img}" alt=""  id="${doc.data().id}">
-                        </ons-carousel-item>
-                    </div>`;
-                    $('#carousel222').append(row);
-                });
-            });
-        }
-
-    }
-
-);

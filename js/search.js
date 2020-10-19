@@ -36,7 +36,7 @@ function Src() {
         querySnapshot.forEach((doc) => {
             const titleMovie = doc.data().title;
             if (titleMovie.indexOf(result) != -1) {
-                var row = `<div class="col-4 areaMovie movieSrc" id="${doc.data().id}">
+                var row = `<div class="col-4 col-md-2 areaMovie movieSrc" id="${doc.data().id}">
                                 <div class="user_thumbnail">
                                     <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
                                 </div>
@@ -58,7 +58,7 @@ function getmovieCategory(Type) {
         querySnapshot.forEach((doc) => {
             const typeMovie = doc.data().type;
             if (typeMovie === Type) {
-                var row = `<div class="col-4 areaMovie movieCat" id="${doc.data().id}">
+                var row = `<div class="col-4 col-md-2 areaMovie movieCat" id="${doc.data().id}">
                                 <div class="user_thumbnail">
                                     <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
                                 </div>

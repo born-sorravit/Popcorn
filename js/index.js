@@ -9,7 +9,6 @@ $(function() {
             getmovie3();
         } else if (page.id === 'profile') {
             $('#signout').click(function() {
-                console.log("asadad");
                 firebase.auth().signOut().then(function() {
                     // Sign-out successful.
                 }).catch(function(error) {
@@ -24,7 +23,6 @@ $(function() {
         if (user) {
             var email = user.email;
             var displayName = user.displayName;
-            console.log(`User with email ${email} signed in and yourname ${displayName}`);
             var img = `<img class="list-material__thumbnail" src="${user.photoURL}">`
             $("#userProfile").append(img)
             $("#userName").html(displayName)
@@ -143,11 +141,9 @@ function getmovie3() {
 }
 
 function getmovieDetail(Target) {
-    console.log(Target);
     db.collection("movieDetail").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
-                console.log(doc.data());
                 const result =
                     `<div class="text-center">
                         <img class="card-img-top carouselPoster" src="${doc.data().preview}" alt="" style="padding-top: 20px;">

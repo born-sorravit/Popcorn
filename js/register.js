@@ -3,7 +3,6 @@ $(function() {
         const email = document.getElementById('email').value
         const password = document.getElementById('password').value
         const name = document.getElementById('name').value
-        console.log(email + " " + password + " " + name);
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
